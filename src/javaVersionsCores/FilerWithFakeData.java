@@ -1,10 +1,10 @@
 package javaVersionsCores;
 
 import java.time.OffsetDateTime;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
+
+import javax.management.RuntimeErrorException;
 
 import javaVersionsCores.productData.ProductDataGenerator;
 
@@ -78,6 +78,10 @@ public class FilerWithFakeData {
 		// Task: Get unique product names for products ordered in the last 30 days.
 		products.stream().filter(product -> product.getOrderDate().isAfter(OffsetDateTime.now().minusDays(30))).map(product -> product.getName())
 				.distinct().collect(Collectors.toList());
+	
+		//  EXE 6 * Task: Find the first product that is not a bundle and is customer visible.
+	
+		products.stream().filter(product ->  !product.isBundle() && product.isCustomerVisible()).findFirst().orElseThrow(() ->new RuntimeErrorException(null, "BUG PRODUCT"));
 
 	}
 }

@@ -23,6 +23,7 @@ public static void main(String[] args) {
 	List<String> vehUppers = vehicles.stream().map(veh -> veh.toUpperCase()).collect(Collectors.toList());
 	
 	
+	
 }
 	
 

@@ -1,12 +1,10 @@
 package javaVersionsCores;
 
-
-
 import java.time.OffsetDateTime;
-
+import java.util.List;
 
 public class Product {
-	
+
 	private String id;
 	private String href;
 	private String description;
@@ -14,6 +12,7 @@ public class Product {
 	private boolean isCustomerVisible;
 	private String name;
 	private OffsetDateTime orderDate;
+	private List<AgreementItemRef> AgreementItemRefs;
 
 	public Product() {
 	}
@@ -84,4 +83,3 @@ public class Product {
 	}
 
 }
-

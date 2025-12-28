@@ -7,7 +7,7 @@ import java.util.List;
 public class FilterChaleng1 {
 	public static void main(String[] args) {
 		/*
-		 * 	private String id;
+	private String id;
 	private String href;
 	private String description;
 	private boolean isBundle;
@@ -15,6 +15,10 @@ public class FilterChaleng1 {
 	private String name;
 	private OffsetDateTime orderDate;
 		 */
+		
+		
+		
 	}
+	
 
 }
