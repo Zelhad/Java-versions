@@ -1,6 +1,7 @@
 package javaVersionsCores;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Product {
@@ -12,18 +13,19 @@ public class Product {
 	private boolean isCustomerVisible;
 	private String name;
 	private OffsetDateTime orderDate;
-	private List<AgreementItemRef> AgreementItemRefs;
+	private List<AgreementItemRef> agreementItemRefs;
 
 	public Product() {
 	}
 
 	public Product(String href, String description, boolean isBundle, boolean isCustomerVisible, String name,
-			OffsetDateTime orderDate) {
+			OffsetDateTime orderDate , List<AgreementItemRef> agreementItemRefs ) {
 		this.href = href;
 		this.description = description;
 		this.isBundle = isBundle;
 		this.isCustomerVisible = isCustomerVisible;
 		this.orderDate = orderDate;
+		 this.agreementItemRefs = agreementItemRefs != null ? agreementItemRefs : new ArrayList<>();
 	}
 
 	public String getId() {
@@ -81,5 +83,18 @@ public class Product {
 	public void setOrderDate(OffsetDateTime orderDate) {
 		this.orderDate = orderDate;
 	}
+
+	public List<AgreementItemRef> getAgreementItemRefs() {
+		return agreementItemRefs;
+	}
+
+	public void setAgreementItemRefs(List<AgreementItemRef> agreementItemRefs) {
+		agreementItemRefs = agreementItemRefs;
+	}
+	//To add a single  agreementItemRefs to the List
+	 public void addAgreementItemRef(AgreementItemRef agreementItemRef) {
+	        this.agreementItemRefs.add(agreementItemRef);
+	    }
+	
 
 }

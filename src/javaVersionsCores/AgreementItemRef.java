@@ -2,7 +2,6 @@ package javaVersionsCores;
 
 public class AgreementItemRef {
 
-	
 	private String id;
 	private String href;
 	private String agreementItemId;

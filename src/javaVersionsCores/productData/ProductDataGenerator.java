@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javaVersionsCores.AgreementItemRef;
 import javaVersionsCores.Product;
 
 public class ProductDataGenerator {
@@ -30,16 +31,31 @@ public class ProductDataGenerator {
 			
 			Product product = new Product(
 					"api/products" + id,
-					"Description for " + name + "In category " + cat , isBundle , isCustumerVisible , name,  orderDate);
+					"Description for " + name + "In category " + cat , 
+					isBundle , 
+					isCustumerVisible ,
+					name,  orderDate,new ArrayList<>());
 			product.setId(id);
-			
 			product.setName(name);
-			
-			products.add(product);
-			
-
-		}
-		return products;
+			//Generate some agreementItemRef 
+			 int numAgreements = random.nextInt(3); // 0-2 agreements
+	            for (int j = 0; j < numAgreements; j++) {
+	            	AgreementItemRef  agreement = new AgreementItemRef (
+	                    "AGREF" + String.format("%04d", i) + "_" + j,
+	                    "api/agreements/AG" + String.format("%04d", i) + "_" + j,
+	                    "AG" + String.format("%04d", i) + "_" + j,
+	                    "Agreement for " + name,
+	                    "BaseType",
+	                    "http://schema.example.com",
+	                    "AgreementItemRef",
+	                    "AgreementItem"
+	                );
+	                product.addAgreementItemRef(agreement);
+	            }
+	            
+	            products.add(product);
+	        }
+	        return products;
 		
 	}
 	}
