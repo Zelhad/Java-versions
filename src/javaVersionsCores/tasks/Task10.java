@@ -30,7 +30,7 @@ public class Task10 {
 		//All unique agreement IDs across all products
 products.stream().map(product -> product.getId()).distinct();
 		//The product with the most agreements
-products.stream().filter(product-> product.getAgreementItemRefs().size())
+//roducts.stream().filter(product-> product.getAgreementItemRefs().size());
 	}
 	
 	/*
