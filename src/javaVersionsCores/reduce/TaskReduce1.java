@@ -33,6 +33,9 @@ public class TaskReduce1 {
 		Optional<Product> reduce = products.stream()
 		.reduce((a,b) -> a.getAgreementItemRefs().size()> b.getAgreementItemRefs().size() ? a : b);
 		reduce.get();
+		
+		
+		
 	 
 		/*
 		 * 	for(List<AgreementItemRef> aggrs :collect) {
@@ -42,6 +45,19 @@ public class TaskReduce1 {
 			
 		}
 		 */
+		//Earliest Order Date
+		Optional<Product> earlietOrderDate = products.stream().reduce((a,b)->a.getOrderDate().isBefore(b.getOrderDate()) ? a :b );
+		System.out.println("***************************************************************");
+		System.out.println(earlietOrderDate.get().getName());
+	
+		//Exercise 4: Combine Operations
+		//Find the concatenated names of only bundled products, in uppercase, separated by commas.
+		String bundleConcanitedNames = products.stream().filter(Product::isBundle)
+		.map(product-> product.getName().toUpperCase())
+		.reduce("" , (acc, nextValue) -> acc+ nextValue + ",");
+		System.out.println(bundleConcanitedNames);
+		
+		
 	
 		
 	
