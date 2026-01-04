@@ -9,6 +9,7 @@ import javaVersionsCores.productData.ProductDataGenerator;
 public class Task10 {
 	public static void main(String[] args) {
 		List<Product> products = ProductDataGenerator.generateProduct(100);
+		
 		//Total number of products
 		products.stream().count();
 
