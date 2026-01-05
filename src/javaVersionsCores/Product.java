@@ -24,6 +24,7 @@ public class Product {
 		this.description = description;
 		this.isBundle = isBundle;
 		this.isCustomerVisible = isCustomerVisible;
+		this.name=name;
 		this.orderDate = orderDate;
 		 this.agreementItemRefs = agreementItemRefs != null ? agreementItemRefs : new ArrayList<>();
 	}
