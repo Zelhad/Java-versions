@@ -1,6 +1,7 @@
 package javaVersionsCores.tasks;
 
 import java.util.List;
+import java.util.OptionalDouble;
 
 import javaVersionsCores.Product;
 import javaVersionsCores.productData.ProductDataGenerator;
@@ -27,7 +28,18 @@ public class Task11 {
 		 */
 		long countVisibleProduct = products.stream().filter(product -> product.isCustomerVisible()).count();
 		long countNotVisibleProduct = products.stream().filter(product -> !product.isCustomerVisible()).count();
-		System.out.println("Visble  product is " + countVisibleProduct + " And not visible product is " +countNotVisibleProduct );
+		// System.out.println("Visble product is " + countVisibleProduct + " And not
+		// visible product is " +countNotVisibleProduct );
+
+		/*
+		 * Task 4: Average agreements per product
+		 */
+		OptionalDouble averageArgreementPerProduct = products.stream().mapToInt(p -> p.getAgreementItemRefs().size())
+				.average();
+		/*
+		 * Top 3 categories with most products
+		 */
+		
 	}
 
 }

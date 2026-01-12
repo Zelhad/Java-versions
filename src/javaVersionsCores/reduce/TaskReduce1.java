@@ -11,7 +11,9 @@ import javaVersionsCores.productData.ProductDataGenerator;
 
 public class TaskReduce1 {
 	public static void main(String[] args) {
+		
 		List<Product> products = ProductDataGenerator.generateProduct(100);
+		
 		//Ex1 Concatenate all product names into a single string separated by " | "
 		String AllNames = products.stream().
 		map(product -> product.getName()).
